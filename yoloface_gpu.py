@@ -6,11 +6,11 @@ from yolo.yolo import YOLO, detect_img
 #####################################################################
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model', type=str, default='model-weights/YOLO_Face.h5',
+    parser.add_argument('--model', type=str, default='./yolo/model-weights/YOLO_Face.h5',
                         help='path to model weights file')
-    parser.add_argument('--anchors', type=str, default='cfg/yolo_anchors.txt',
+    parser.add_argument('--anchors', type=str, default='./yolo/cfg/yolo_anchors.txt',
                         help='path to anchor definitions')
-    parser.add_argument('--classes', type=str, default='cfg/face_classes.txt',
+    parser.add_argument('--classes', type=str, default='./yolo/cfg/face_classes.txt',
                         help='path to class definitions')
     parser.add_argument('--score', type=float, default=0.5,
                         help='the score threshold')
