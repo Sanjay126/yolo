@@ -171,6 +171,7 @@ def detect_img(yolo):
         image = Image.open(self.img)
     except:
         print('*** Open Error! Try again!')
+        print(self.img)
     res_image = yolo.detect_image(image)
     yolo.close_session()
     return res_image
