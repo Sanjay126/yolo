@@ -41,9 +41,9 @@ samples/
 *_kmeans.py
 
 # The weights of the trained models
-model-weights/
-*.weights
-*.h5
+# model-weights/
+# *.weights
+# *.h5
 
 # Output files
 outputs/
