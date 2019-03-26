@@ -29,13 +29,13 @@ class YOLO(object):
         self.model_path = './model-weights/YOLO_Face.h5'
         self.classes_path = './yolo/cfg/face_classes.txt'
         self.anchors_path = './yolo/cfg/yolo_anchors.txt'
+        self.score=0.5
+        self.iou=0.45
         self.class_names = self._get_class()
         self.anchors = self._get_anchors()
         self.sess = K.get_session()
         self.boxes, self.scores, self.classes = self._generate()
         self.model_image_size = (416, 416)
-        self.score=0.5
-        self.iou=0.45
 
     def _get_class(self):
         classes_path = os.path.expanduser(self.classes_path)
