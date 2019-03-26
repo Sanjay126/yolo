@@ -117,7 +117,7 @@ class YOLO(object):
                 K.learning_phase(): 0
             })
 
-        return out_boxes
+        return out_boxes,boxed_image
         # print('*** Found {} face(s) for this image'.format(len(out_boxes)))
         # thickness = (image.size[0] + image.size[1]) // 400
 
@@ -168,13 +168,12 @@ def letterbox_image(image, size):
 
 def detect_img(yolo,img):
     try:
-        image = Image.open(img)
-        res_image = yolo.detect_image(image)
+        boxes,boxed_img = yolo.detect_image(img)
         yolo.close_session()
     except:
         print('*** Open Error! Try again!')
-        res_image=None
-    return res_image
+        boxes=None
+    return boxes, boxed_img
 
 
 # def detect_video(model, video_path=None, output=None):
