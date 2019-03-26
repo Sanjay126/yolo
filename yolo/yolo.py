@@ -105,7 +105,7 @@ class YOLO(object):
                               image.height - (image.height % 32))
             boxed_image = letterbox_image(image, new_image_size)
         image_data = np.array(boxed_image, dtype='float32')
-        print(image_data.shape)
+        # print(image_data.shape)
         image_data /= 255.
         # add batch dimension
         image_data = np.expand_dims(image_data, 0)
