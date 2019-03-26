@@ -168,7 +168,8 @@ def letterbox_image(image, size):
 
 def detect_img(yolo,img):
     try:
-        boxes,boxed_img = yolo.detect_image(img)
+        pil_im=Image.fromarray(img)
+        boxes,boxed_img = yolo.detect_image(pil_im)
     except Exception:
         print('*** Open Error! Try again!',Exception)
         boxes=None
