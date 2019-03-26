@@ -169,10 +169,11 @@ def letterbox_image(image, size):
 def detect_img(yolo,img):
     try:
         boxes,boxed_img = yolo.detect_image(img)
-        yolo.close_session()
     except:
         print('*** Open Error! Try again!')
         boxes=None
+        boxed_img=None
+
     return boxes, boxed_img
 
 
