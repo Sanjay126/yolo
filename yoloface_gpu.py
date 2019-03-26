@@ -18,18 +18,14 @@ def get_args():
                         help='the iou threshold')
     parser.add_argument('--img-size', type=list, action='store',
                         default=(416, 416), help='input image size')
-    parser.add_argument('--image', type=str, default='',
-                    help='path to image file')
     args = parser.parse_args()
     return args
 
 
-def _main():
+def _main(img):
     # Get the arguments
     args = get_args()
-    boxes=detect_img(YOLO(args))
-    print(boxes)
+    boxes=detect_img(YOLO(args),img)
+    return boxes
 
 
-if __name__ == "__main__":
-    _main()

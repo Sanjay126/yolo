@@ -166,9 +166,9 @@ def letterbox_image(image, size):
     return new_image
 
 
-def detect_img(yolo):
+def detect_img(yolo,img):
     try:
-        image = Image.open(yolo.img)
+        image = Image.open(img)
         res_image = yolo.detect_image(image)
         yolo.close_session()
     except:
